@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+@import url("https://fonts.googleapis.com/css?family=Comfortaa");
+body {
+  background-color: #f9f9f9;
+  font-family: "Poppins", sans-serif;
+}
+
+.card-ui {
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  background: #fff;
+  color: #212529;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -ms-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+.card-ui .card-body {
+  z-index: 1;
+}
+.card-ui .card-body h5 {
+  font-weight: 700;
+  font-family: "Comfortaa";
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 100%;
+}
+.card-ui .card-body span {
+  font-weight: 100;
+  letter-spacing: 0.5px;
+}
+.card-ui img {
+  height: 170px;
+  width: 93%;
+  border-radius: 10px;
+  top: 9px;
+  position: relative;
+  left: 11px;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -ms-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  box-shadow: 0px 20px 20px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+}
+.card-ui .overlay {
+  width: 118px;
+  position: absolute;
+  height: 118px;
+  border-radius: 50%;
+  top: 100%;
+  right: 0;
+  z-index: -1;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+.card-ui:hover {
+  box-shadow: 0 7px 20px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+  text-decoration: none;
+  transform: translateY(-5px) scale(1.005) translateZ(0);
+  box-shadow: 0 24px 36px rgba(0, 0, 0, 0.11), 0 24px 46px var(rgba(220, 233, 255, 0.48));
+}
+.card-ui:hover .overlay {
+  transform: scale(12) translateZ(0);
+  overflow: hidden;
+  background-image: linear-gradient(to bottom, #202020, #2c2c2c, #383838, #444545, #515252);
+}
+.card-ui:hover .overlay.color-1 {
+  background-image: linear-gradient(to top, #00b7f6, #00a4f9, #0090f9, #0079f5, #005feb);
+}
+.card-ui:hover .overlay.color-2 {
+  background-image: linear-gradient(to top, #4e16be, #7426c8, #9537d2, #b249dc, #ce5ce6);
+}
+.card-ui:hover .overlay.color-3 {
+  background-image: linear-gradient(to top, #be2068, #d43b63, #e6565f, #f4705d, #ff8b5d);
+}
+.card-ui:hover .overlay.color-4 {
+  background-image: linear-gradient(to bottom, #9b3cb7, #bf31a9, #db2897, #f02b84, #ff396f);
+}
+.card-ui:hover .overlay.color-5 {
+  background-image: linear-gradient(to bottom, #23bcbb, #00c8b9, #00d4b1, #18dfa5, #45e994);
+}
+.card-ui:hover .overlay.color-6 {
+  background-image: linear-gradient(to top, #832643, #982949, #ad2c4d, #c22f51, #d73353);
+}
+.card-ui:hover .overlay.color-7 {
+  background-image: linear-gradient(to top, #6ec13d, #28b062, #009c79, #008681, #216f78);
+}
+.card-ui:hover .overlay.color-8 {
+  background-image: linear-gradient(to top, #cbb4d4, #9d83a6, #70557b, #462a52, #20002c);
+}
+.card-ui:hover .overlay.color-9 {
+  background-image: linear-gradient(to top, #17ea19, #00dda6, #00c6fd, #00a5ff, #6078ea);
+}
+.card-ui:hover .card-body p, .card-ui:hover .card-body h5 {
+  color: #fff;
+}
+.card-ui:hover .card-body span {
+  color: #000;
+  background: #fff;
+}
+
+.my-blog {
+  position: absolute;
+  padding-top: 100px;
+  text-align: center;
+  width: -webkit-fill-available;
+  color: #202020;
+  font-weight: bold;
+}
+
+/*# sourceMappingURL=output.css.map */
