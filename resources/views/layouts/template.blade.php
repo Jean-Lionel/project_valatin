@@ -71,7 +71,10 @@
       <a class="p-2 text-dark" href="{{ route('articles.index') }}">Articles</a>
       <a class="p-2 text-dark" href="{{ route('slides.index') }}">Slides</a>
       <a class="p-2 text-dark" href="{{ route('publicites.index') }}">Publicité</a>
-      <a class="p-2 text-dark" href="#">Pricing</a>
+      <a class="p-2 text-dark" href="{{ route('publications.index') }}">Publication</a>
+      <a class="p-2 text-dark" href="{{ route('contacts.index') }}">Contacts</a>
+      <a class="p-2 text-dark" href="{{ route('apropos.index') }}">A propos</a>
+      <a class="p-2 text-dark" href="{{ route('commessarias.index') }}">Commissariat</a>
     </nav>
     <a class="btn btn-outline-primary" href="#">Sign up</a>
   </div>
@@ -87,5 +90,8 @@
   <footer class="pt-4 my-md-5 pt-md-5 border-top">
       
     </footer>
+    <script src="{{ asset('./js/jquery-3.5.1.js') }}"></script>
+
+    @yield('javascript')
 </body>
 </html>

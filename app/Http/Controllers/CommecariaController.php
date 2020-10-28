@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Publication;
+use App\Models\Commecaria;
 use Illuminate\Http\Request;
 
-class PublicationController extends Controller
+class CommecariaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,9 @@ class PublicationController extends Controller
      */
     public function index()
     {
-        $publications = Publication::latest()->paginate(5);
-
-        return view('publications.index', compact('publications'));
+        $commessarias = Commecaria::latest()->paginate(10);
+        dd( $commessarias);
+        return view('commessarias.index', compact('commessarias'));
     }
 
     /**
@@ -27,8 +27,7 @@ class PublicationController extends Controller
     public function create()
     {
         //
-
-        return view('publications.create');
+        return view('commessarias.create');
     }
 
     /**
@@ -40,72 +39,62 @@ class PublicationController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-
             'description' => 'required',
+            'type' => 'required'
+
         ]);
 
-        Publication::create($request->all());
+        Commecaria::create($request->all());
+
         return $this->index();
+
+
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Publication  $Publication
+     * @param  \App\Models\Commecaria  $commecaria
      * @return \Illuminate\Http\Response
      */
-    public function show(Publication $Publication)
+    public function show(Commecaria $commecaria)
     {
-        //
-
-        return view('Publications.view', compact('Publication'));
+        return view('commessarias.view', compact('commecaria'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Publication  $Publication
+     * @param  \App\Models\Commecaria  $commecaria
      * @return \Illuminate\Http\Response
      */
-    public function edit(Publication $Publication)
+    public function edit(Commecaria $commecaria)
     {
         //
-        return view('Publications.edit', compact('Publication'));
-
-
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Publication  $Publication
+     * @param  \App\Models\Commecaria  $commecaria
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Publication $Publication)
+    public function update(Request $request, Commecaria $commecaria)
     {
         //
-           $request->validate([
-
-            'message' => 'required',
-        ]);
-
-         $Publication->update($request->all());
-
-         return $this->index();
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Publication  $Publication
+     * @param  \App\Models\Commecaria  $commecaria
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Publication $Publication)
+    public function destroy(Commecaria $commecaria)
     {
         //
-
-        $Publication->delete();
+        $commecaria->delete();
 
         return $this->index();
     }

@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Publication;
+use App\Models\Apropos;
 use Illuminate\Http\Request;
 
-class PublicationController extends Controller
+class AproposController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,8 @@ class PublicationController extends Controller
      */
     public function index()
     {
-        $publications = Publication::latest()->paginate(5);
-
-        return view('publications.index', compact('publications'));
+        $apropos = Apropos::latest()->paginate(10);
+        return view('apropos.index', compact('apropos'));
     }
 
     /**
@@ -26,9 +25,7 @@ class PublicationController extends Controller
      */
     public function create()
     {
-        //
-
-        return view('publications.create');
+        return view('apropos.create');
     }
 
     /**
@@ -40,72 +37,59 @@ class PublicationController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-
             'description' => 'required',
+            'type_apropos' => 'required'
+
         ]);
 
-        Publication::create($request->all());
+        Apropos::create($request->all());
+
         return $this->index();
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Publication  $Publication
+     * @param  \App\Models\Apropos  $apropos
      * @return \Illuminate\Http\Response
      */
-    public function show(Publication $Publication)
+    public function show(Apropos $apropo)
     {
-        //
-
-        return view('Publications.view', compact('Publication'));
+       return view('apropos.view', compact('apropo'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Publication  $Publication
+     * @param  \App\Models\Apropos  $apropos
      * @return \Illuminate\Http\Response
      */
-    public function edit(Publication $Publication)
+    public function edit(Apropos $apropos)
     {
         //
-        return view('Publications.edit', compact('Publication'));
-
-
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Publication  $Publication
+     * @param  \App\Models\Apropos  $apropos
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Publication $Publication)
+    public function update(Request $request, Apropos $apropos)
     {
         //
-           $request->validate([
-
-            'message' => 'required',
-        ]);
-
-         $Publication->update($request->all());
-
-         return $this->index();
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Publication  $Publication
+     * @param  \App\Models\Apropos  $apropos
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Publication $Publication)
+    public function destroy(Apropos $apropos)
     {
-        //
-
-        $Publication->delete();
+        $apropos->delete();
 
         return $this->index();
     }

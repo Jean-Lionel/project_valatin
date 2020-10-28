@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Publication;
+use App\Models\Contact;
 use Illuminate\Http\Request;
 
-class PublicationController extends Controller
+class ContactController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,9 @@ class PublicationController extends Controller
      */
     public function index()
     {
-        $publications = Publication::latest()->paginate(5);
+        $contacts = Contact::latest()->paginate(10);
 
-        return view('publications.index', compact('publications'));
+        return view('contacts.index', compact('contacts'));
     }
 
     /**
@@ -26,9 +26,7 @@ class PublicationController extends Controller
      */
     public function create()
     {
-        //
-
-        return view('publications.create');
+        return view('contacts.create');
     }
 
     /**
@@ -40,72 +38,58 @@ class PublicationController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-
             'description' => 'required',
+            'type_contact' => 'required'
         ]);
 
-        Publication::create($request->all());
+        Contact::create($request->all());
+
         return $this->index();
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Publication  $Publication
+     * @param  \App\Models\Contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function show(Publication $Publication)
+    public function show(Contact $contact)
     {
-        //
-
-        return view('Publications.view', compact('Publication'));
+        return view('contacts.view', compact('contact'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Publication  $Publication
+     * @param  \App\Models\Contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function edit(Publication $Publication)
+    public function edit(Contact $contact)
     {
         //
-        return view('Publications.edit', compact('Publication'));
-
-
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Publication  $Publication
+     * @param  \App\Models\Contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Publication $Publication)
+    public function update(Request $request, Contact $contact)
     {
         //
-           $request->validate([
-
-            'message' => 'required',
-        ]);
-
-         $Publication->update($request->all());
-
-         return $this->index();
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Publication  $Publication
+     * @param  \App\Models\Contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Publication $Publication)
+    public function destroy(Contact $contact)
     {
-        //
-
-        $Publication->delete();
+        $contact->delete();
 
         return $this->index();
     }
