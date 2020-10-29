@@ -15,7 +15,7 @@ class CommecariaController extends Controller
     public function index()
     {
         $commessarias = Commecaria::latest()->paginate(10);
-        dd( $commessarias);
+    
         return view('commessarias.index', compact('commessarias'));
     }
 
@@ -57,8 +57,11 @@ class CommecariaController extends Controller
      * @param  \App\Models\Commecaria  $commecaria
      * @return \Illuminate\Http\Response
      */
-    public function show(Commecaria $commecaria)
+    public function show($id)
     {
+        $commecaria  = Commecaria::where('id', $id)->firstOrFail();
+
+
         return view('commessarias.view', compact('commecaria'));
     }
 

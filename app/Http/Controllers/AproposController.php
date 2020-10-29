@@ -15,7 +15,7 @@ class AproposController extends Controller
     public function index()
     {
         $apropos = Apropos::latest()->paginate(10);
-        return view('apropos.index', compact('apropos'));
+        return view('appropos.index', compact('apropos'));
     }
 
     /**
@@ -25,7 +25,9 @@ class AproposController extends Controller
      */
     public function create()
     {
-        return view('apropos.create');
+      
+
+        return view('appropos.create');
     }
 
     /**
@@ -55,7 +57,7 @@ class AproposController extends Controller
      */
     public function show(Apropos $apropo)
     {
-       return view('apropos.view', compact('apropo'));
+       return view('appropos.view', compact('apropo'));
     }
 
     /**
@@ -87,9 +89,9 @@ class AproposController extends Controller
      * @param  \App\Models\Apropos  $apropos
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Apropos $apropos)
+    public function destroy(Apropos $apr)
     {
-        $apropos->delete();
+        $apr->delete();
 
         return $this->index();
     }

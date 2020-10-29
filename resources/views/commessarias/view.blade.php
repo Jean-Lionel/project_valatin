@@ -4,18 +4,19 @@
 
 <div class="row">
 	<div class="col-md-12">
+		
 	
-		<h3>{{$apropo->type_apropos}}</h3>
+		<h3>{{$commecaria->type}}</h3>
 		
 	</div>
 
 	<div class="col-md-12">
 		<p class="text-justify">
-			{!! ( $apropo->description) !!}
+			{!!  $commecaria->description !!}
 		</p>
 
 		<p class="text-center">
-  			 {{ $apropo->created_at }}
+  			 {{ $commecaria->created_at }}
   	</p>
 
 <!-- Footer -->

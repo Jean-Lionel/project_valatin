@@ -24,6 +24,7 @@
         <tr>
             <th>No</th>
             <th>Titre</th>
+            <th>Type</th>
     
             <th>Date Created</th>
             <th>Actions</th>
@@ -37,6 +38,8 @@
                            {{$article->title}}
                         </a>
                 </td>
+
+                 <td>{{$article->type_pub}}</td>
               
                 
                 <td>{{$article->created_at}}</td>

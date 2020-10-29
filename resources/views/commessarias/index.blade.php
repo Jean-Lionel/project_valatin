@@ -6,7 +6,7 @@
         <div class="col-lg-12 margin-tb">
           
             <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('commessarias.create') }}" title="Create a article"> <i class="fas fa-plus-circle"></i>
+                <a class="btn btn-success" href="{{ route('commessarias.create') }}" title="Create a commicariat"> <i class="fas fa-plus-circle"></i>
                     </a>
             </div>
         </div>
@@ -26,23 +26,23 @@
             <th>Date Created</th>
             <th>Actions</th>
         </tr>
-        @foreach ($commessarias as $article)
+        @foreach ($commessarias as $commicariat)
             <tr>
-                <td>{{$article->id}}</td>
+                <td>{{$commicariat->id}}</td>
                 <td>
 
-                     <a href="{{ route('commessarias.show',$article) }}" title="show">
-                           {{$article->type_commessarias}}
+                     <a href="{{ route('commessarias.show',$commicariat) }}" title="show">
+                           {{ strtoupper($commicariat->type)}}
                         </a>
                 </td>
               
                 
-                <td>{{$article->created_at}}</td>
+                <td>{{$commicariat->created_at}}</td>
                 
                 <td>
-                    <form action="{{ route('commessarias.destroy', $article) }}" method="POST">
+                    <form action="{{ route('commessarias.destroy', $commicariat) }}" method="POST">
 
-                        <a href="{{ route('commessarias.show',$article) }}" title="show">
+                        <a href="{{ route('commessarias.show',$commicariat) }}" title="show">
                             <i class="fas fa-eye text-success  fa-lg"></i>
                         </a>
 

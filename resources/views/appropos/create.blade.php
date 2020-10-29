@@ -36,6 +36,8 @@
                         <option value="STRUCTURE ET ORGANIGRAMME">Structure et Organigramme</option>
                         <option value="HISTOIRE DE LA PNB">Histoire de la PNB</option>
                         <option value="LOI ET REGLEMENT">Loi et reglement</option>
+                        <option value="LOI ET REGLEMENT">Loi et reglement</option>
+                        <option value="PARTENAIRE">Parténaire</option>
                     </select>
                 </div>
             </div>

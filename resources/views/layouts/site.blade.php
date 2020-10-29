@@ -55,13 +55,13 @@
 					
 					<span class="dropbtn">A propos de Nous</span>
 						<div class="dropdown-content">
-							<a href="#">Vision et Mission</a>
-							<a href="#">Structure et Organigramme</a>
-							<a href="#">Historique de la pnb</a>
+							<a href="{{ route('apropos', 'mission') }}">Vision et Mission</a>
+							<a href="{{ route('apropos','organigramme') }}">Structure et Organigramme</a>
+							<a href="{{ route('apropos','histoire') }}">Historique de la pnb</a>
 
-							<a href="#">Lois et reglement</a>
+							<a href="{{ route('apropos','reglement') }}">Lois et reglement</a>
 
-							<a href="#">Paténaire</a>
+							<a href="{{ route('apropos','partenaire') }}">Parténaire</a>
 						</div>
 					</div>
 
@@ -69,21 +69,21 @@
 					<span class="dropbtn">Commissariats Généraux</span>
 					<div class="dropdown-content">
 						<div class="drop-rigth">
-							<a href="#" class="">Commissariat Général PJ</a>
+							<a href="{{ route('commissariat','commissariat') }}" class="">Commissariat Général PJ</a>
 
 							<div class="sous-drop-rigth">
-								<a href="#">BCN-INTERPOL Bujumbura</a>
-								<a href="#">Indéntification judiciaire</a>
+								<a href="{{ route('commissariat','BCN-INTERPOL') }}">BCN-INTERPOL Bujumbura</a>
+								<a href="{{ route('commissariat','judiciaire') }}">Indéntification judiciaire</a>
 
-								<a href="#">Rechercher criminelle</a>
+								<a href="{{ route('commissariat','rechercher criminelle') }}">Rechercher criminelle</a>
 
-								<a href="#">Documentation et statistiques</a>
+								<a href="{{ route('commissariat','Documentation') }}">Documentation et statistiques</a>
 
-								<ul>
+								<ul style="list-style: none;">
 									<li><span>Unité spécialisées:</span></li>
-									<li><a href="">Anti drogue</a></li>
-									<li><a href="">PPM</a></li>
-									<li><a href="">brig</a></li>
+									<li><a href="{{ route('commissariat','drogue') }}">Anti drogue</a></li>
+									<li><a href="{{ route('commissariat','ppm') }}">PPM</a></li>
+									<li><a href="{{ route('commissariat','brig') }}">brig</a></li>
 									
 								</ul>
 							</div>
@@ -94,16 +94,8 @@
 							<a href="#" class="">Commissariat Général PSI</a>
 
 							<div class="sous-drop-rigth">
-								<a href="#">Instruction, entrainement et Opération</a>
-								<a href="#">Police de proximité</a>
-
-								<ul>
-									<li><span>Unité spécialisées:</span></li>
-									<li><a href="">Anti drogue</a></li>
-									<li><a href="">PPM</a></li>
-									<li><a href="">brig</a></li>
-									
-								</ul>
+								<a href="{{ route('commissariat','entrainement') }}">Instruction, entrainement et Opération</a>
+								<a href="{{ route('commissariat','police') }}">Police de proximité</a>
 							</div>
 
 						</div>
@@ -112,12 +104,12 @@
 							<a href="#" class="">Commissariat Général Migration</a>
 
 							<div class="sous-drop-rigth">
-								<a href="#">Chancelier</a>
-								<a href="#">Documents de voyage</a>
-								<a href="#">Frontières</a>
-								<a href="#">Etrangers</a>
-								<a href="#">Aéroportuaire</a>
-								<a href="#">Portuaire</a>
+								<a href="{{ route('commissariat', 'Chancelier') }}">Chancelier</a>
+								<a href="{{ route('commissariat','documents') }}">Documents de voyage</a>
+								<a href="{{ route('commissariat','front') }}">Frontières</a>
+								<a href="{{ route('commissariat','etranger') }}">Etrangers</a>
+								<a href="{{ route('commissariat','aeroportuaire') }}">Aéroportuaire</a>
+								<a href="{{ route('commissariat','portuaire') }}">Portuaire</a>
 							</div>
 
 						</div>
@@ -126,9 +118,9 @@
 							<a href="#" class="">Commissariat Général Formation</a>
 
 							<div class="sous-drop-rigth">
-								<a href="#">Institut Supérieur de Police</a>
-								<a href="#">Ecole des Brigadiers de Police</a>
-								<a href="#">Centre de Formation et Perfectionnement</a>
+								<a href="{{ route('commissariat','institut') }}">Institut Supérieur de Police</a>
+								<a href="{{ route('commissariat','ecole') }}">Ecole des Brigadiers de Police</a>
+								<a href="{{ route('commissariat','centre') }}">Centre de Formation et Perfectionnement</a>
 								
 							</div>
 
@@ -143,10 +135,10 @@
 				<div class="dropdown">
 					<span class="dropbtn">Publication</span>
 					<div class="dropdown-content">
-						COMMUNIQUE
+
 					<a href="{{ route('publicite','COMMUNIQUE') }}">Communique de presse</a>
 						<a href="{{ route('publicite','POLICE') }}">Police Magazine</a>
-						<a href="{{ route('SPORT') }}">Sport</a>
+						<a href="{{ route('publicite','SPORT') }}">Sport</a>
 					</div>
 				</div>
 

@@ -54,11 +54,11 @@ class PublicationController extends Controller
      * @param  \App\Models\Publication  $Publication
      * @return \Illuminate\Http\Response
      */
-    public function show(Publication $Publication)
+    public function show(Publication $publication )
     {
         //
 
-        return view('Publications.view', compact('Publication'));
+        return view('publications.view', compact('publication'));
     }
 
     /**
@@ -67,10 +67,10 @@ class PublicationController extends Controller
      * @param  \App\Models\Publication  $Publication
      * @return \Illuminate\Http\Response
      */
-    public function edit(Publication $Publication)
+    public function edit(Publication $publication )
     {
         //
-        return view('Publications.edit', compact('Publication'));
+        return view('Publications.edit', compact('publication'));
 
 
     }
@@ -101,11 +101,11 @@ class PublicationController extends Controller
      * @param  \App\Models\Publication  $Publication
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Publication $Publication)
+    public function destroy(Publication $publication)
     {
         //
 
-        $Publication->delete();
+        $publication->delete();
 
         return $this->index();
     }

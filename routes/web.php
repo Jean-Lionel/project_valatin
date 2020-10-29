@@ -26,6 +26,10 @@ Route::get('/article/{id}','ClientController@article')->name('article');
 Route::get('/contact/{contact}','ClientController@contact')->name('contact');
 Route::get('/publicite/{publicite}','ClientController@publicite')->name('publicite');
 
+Route::get('/apropos-client/{apropos}','ClientController@apropos')->name('apropos');
+
+Route::get('/police-commissariat-client/{commissariat}','ClientController@commissariat')->name('commissariat');
+
 
 
 Route::resource('products', ProductController::class);
