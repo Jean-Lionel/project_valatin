@@ -1,13 +1,15 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Slide;
-use App\Models\Article;
-use App\Models\Contact;
-use App\Models\Publication;
 use App\Models\Apropos;
+use App\Models\Article;
 use App\Models\Commecaria;
-
+use App\Models\Contact;
+use App\Models\Document;
+use App\Models\Publication;
+use App\Models\Publicite;
+use App\Models\Slide;
+use App\Models\SocialNetwork;
 use Illuminate\Http\Request;
 
 class ClientController extends Controller
@@ -21,13 +23,19 @@ class ClientController extends Controller
 		$slides = Slide::latest()->limit(3)->get();
 
 		$articles = Article::latest()->limit(12)->get();
+		$publicite = Publicite::latest()->limit(1)->get();
+		$documents = Document::latest()->limit(10)->get();
+		$facebook = SocialNetwork::latest()->limit(1)->get();
 
 		// dump($articles);
 
 		return view('public.index',
 			[
 				'slides' =>$slides, 
-				'articles' => $articles
+				'articles' => $articles,
+				'publicite' => $publicite,
+				'documents' => $documents,
+				'facebook' => $facebook,
 
 			]);
 	}
@@ -37,8 +45,10 @@ class ClientController extends Controller
 
 		$article = Article::where('title', $article)->firstOrFail();
 
+		$facebook = SocialNetwork::latest()->limit(3)->get();
 
-		return view('public.article', compact('article'));
+
+		return view('public.article', compact('article','facebook'));
 
 	}
 

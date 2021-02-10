@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Liste des publicites </h2>
+                <h2>Liste des publicités </h2>
             </div>
             <div class="pull-right">
                 <a class="btn btn-success" href="{{ route('publicites.create') }}" title="Create a publicite"> <i class="fas fa-plus-circle"></i>
@@ -25,7 +25,7 @@
             <th>No</th>
             <th>Message</th>
     
-            <th>Date Created</th>
+            <th>Date de création</th>
             <th>Actions</th>
         </tr>
         @foreach ($publicites as $publicite)

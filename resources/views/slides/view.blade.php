@@ -18,7 +18,7 @@
 		</p>
 
 		<p class="text-center">
-  			Par Jean Lionel Nininahazwe :  {{ $slide->created_at }}
+  			 {{ $slide->created_at }}
   	</p>
 
 <!-- Footer -->

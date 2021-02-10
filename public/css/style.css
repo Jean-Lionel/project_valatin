@@ -62,7 +62,7 @@
 .sous-drop-rigth{
 	display: none;
 	position: absolute;
-	left: 235px;
+	left: 200px;
 	top: 6px;
 	background:  rgba(28,40,170,0.9);
   width: 250px;
@@ -83,4 +83,10 @@
 }
 
 /*End Navigation bar*/
+
+
+.twitter{
+  max-height: 600px;
+  overflow: hidden;
+}
 

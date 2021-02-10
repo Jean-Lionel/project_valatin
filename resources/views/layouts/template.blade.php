@@ -6,7 +6,7 @@
   <meta name="description" content="">
   <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
   <meta name="generator" content="Jekyll v4.1.1">
-  <title>Police National du Burundi</title>
+  <title>Police Nationale du Burundi</title>
 
   <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/pricing/">
 
@@ -62,21 +62,49 @@
   .card-deck .card {
     min-width: 220px;
   }
+
+  .is_active{
+    background: gold;
+  }
   </style>
 </head>
 <body>
   <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-    <h5 class="my-0 mr-md-auto font-weight-normal">POLICE NATIONAL DU BURUNDI</h5>
+    <h5 class="my-0 mr-md-auto font-weight-normal">POLICE NATIONALE DU BURUNDI</h5>
     <nav class="my-2 my-md-0 mr-md-3">
-      <a class="p-2 text-dark" href="{{ route('articles.index') }}">Articles</a>
-      <a class="p-2 text-dark" href="{{ route('slides.index') }}">Slides</a>
-      <a class="p-2 text-dark" href="{{ route('publicites.index') }}">Publicité</a>
-      <a class="p-2 text-dark" href="{{ route('publications.index') }}">Publication</a>
-      <a class="p-2 text-dark" href="{{ route('contacts.index') }}">Contacts</a>
-      <a class="p-2 text-dark" href="{{ route('apropos.index') }}">A propos</a>
-      <a class="p-2 text-dark" href="{{ route('commessarias.index') }}">Commissariat</a>
+      <a class="p-2 text-dark {{ add_active('articles.index') }}" href="{{ route('articles.index') }}">Articles</a>
+      <a class="p-2 text-dark {{ add_active('slides.index') }}" href="{{ route('slides.index') }}">Slides</a>
+      <a class="p-2 text-dark {{ add_active('publicites.index') }}" href="{{ route('publicites.index') }}">Publicité</a>
+      <a class="p-2 text-dark {{ add_active('publications.index') }}" href="{{ route('publications.index') }}">Publication</a>
+      <a class="p-2 text-dark {{ add_active('contacts.index') }}" href="{{ route('contacts.index') }}">Contacts</a>
+      <a class="p-2 text-dark {{ add_active('apropos.index') }}" href="{{ route('apropos.index') }}">A propos</a>
+      <a class="p-2 text-dark {{ add_active('commessarias.index') }}" href="{{ route('commessarias.index') }}">Commissariat</a>
+      <a class="p-2 text-dark {{ add_active('files.index') }}" href="{{ route('files.index') }}">Document</a>
+      <a class="p-2 text-dark {{ add_active('socialnetworks.index') }}" href="{{ route('socialnetworks.index') }}">Facebook</a>
+      
+      
+
+
+
+        
+
+        <div class="text-right">
+          <form method="POST" action="{{ route('logout') }}">
+                   @csrf
+
+            <x-jet-dropdown-link href="{{ route('logout') }}"
+                  onclick="event.preventDefault();
+                   this.closest('form').submit();">
+                       <i class="fa fa-sign-out" aria-hidden="true"></i>
+                       Déconnexion
+                 </x-jet-dropdown-link>
+            </form>
+        </div>
+
+       
+   
     </nav>
-    <a class="btn btn-outline-primary" href="#">Sign up</a>
+  
   </div>
 
  

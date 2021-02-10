@@ -10,6 +10,8 @@
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 	<link rel="stylesheet" href="{{ asset('./css/footer.css') }}">
 	<link rel="stylesheet" href="{{ asset('./css/cardui.css') }}">
 
@@ -28,45 +30,55 @@
 	<header class="container-fluid" >
 		<div class="row"  style="background:rgba(28,40,170,0.8);">
 			<div class="col-sm-12 col-md-3">
-				<img src="{{ asset('./images/header/logo.jpg') }}" alt="Logo de la Police National du burundi" width="100" height="50">
+				<img src="{{ asset('./images/header/logo.png') }}" alt="Logo de la Police National du burundi" width="150" height="150">
 			</div>
-			<div class="col-sm-12 col-md-6"><h3 class="text-center text-white display-6">Police National du Burundi</h3></div>
+			<div class="col-sm-12 col-md-6">
+				<h3 class="text-center text-white display-6">
+				POLICE NATIONALE DU BURUNDI
+			</h3>
+
+			<h4 class="text-center display-5 text-white"> Intégrité - Impartialité - Dignité</h4>
+
+		</div>
 			<div class="col-sm-12 col-md-3">
-				<img src="{{ asset('./images/header/flag-anime.gif') }}" height="50" width="100" alt="Le drapeau du Burundi">
+				<img src="{{ asset('./images/header/flag-anime.gif') }}" height="150"  alt="Le drapeau du Burundi">
 			</div>
 		</div>
 
 		<aside>
 			<div class="row publicite">
-				<h1 class="text-center">Publicite</h1>
+  
+				@yield('publicite')
+				
 			</div>
 		</aside>
 	</header>
 
-		{{-- Navigation --}}
-		<nav class="mt-4 sticky-top container-fluid" >
-			<div class="row nav-bar">
+	{{-- Navigation --}}
+	<nav class="mt-1 sticky-top container-fluid" >
+		<div class="row nav-bar">
 
-				
-				<div class="offset-md-4 col-md-8">
 
-					<a href="{{ route('accueil') }}">Accueil</a>
-					<div class="dropdown">
+			<div class="offset-md-4 col-md-8">
+
+				<a href="{{ route('accueil') }}" style="color: white; font-size: 1.2rem;">Accueil</a>
+				<div class="dropdown">
 					
-					<span class="dropbtn">A propos de Nous</span>
-						<div class="dropdown-content">
-							<a href="{{ route('apropos', 'mission') }}">Vision et Mission</a>
-							<a href="{{ route('apropos','organigramme') }}">Structure et Organigramme</a>
-							<a href="{{ route('apropos','histoire') }}">Historique de la pnb</a>
+					<span class="dropbtn">A propos de Nous <i class="fa fa-sort-desc" aria-hidden="true"></i></span>
+					<div class="dropdown-content">
+						<a href="{{ route('apropos', 'mission') }}">Vision et Mission</a>
+						<a href="{{ route('apropos','organigramme') }}">Structure et Organigramme</a>
+						<a href="{{ route('apropos','histoire') }}">Historique de la pnb</a>
 
-							<a href="{{ route('apropos','reglement') }}">Lois et reglement</a>
+						<a href="{{ route('apropos','reglement') }}">Lois et reglement</a>
 
-							<a href="{{ route('apropos','partenaire') }}">Parténaire</a>
-						</div>
+						<a href="{{ route('apropos','partenaire') }}">Parténaire</a>
 					</div>
+				</div>
 
 				<div class="dropdown">
-					<span class="dropbtn">Commissariats Généraux</span>
+					<span class="dropbtn">Commissariats Généraux <i class="fa fa-sort-desc" aria-hidden="true"></i>
+</span>
 					<div class="dropdown-content">
 						<div class="drop-rigth">
 							<a href="{{ route('commissariat','commissariat') }}" class="">Commissariat Général PJ</a>
@@ -91,7 +103,7 @@
 						</div>
 
 						<div class="drop-rigth">
-							<a href="#" class="">Commissariat Général PSI</a>
+							<a href="#" class="">Commissariat Général PSI <i class="fa fa-sort-desc" aria-hidden="true"></i></a>
 
 							<div class="sous-drop-rigth">
 								<a href="{{ route('commissariat','entrainement') }}">Instruction, entrainement et Opération</a>
@@ -101,7 +113,7 @@
 						</div>
 
 						<div class="drop-rigth">
-							<a href="#" class="">Commissariat Général Migration</a>
+							<a href="#" class="">Commissariat Général Migration <i class="fa fa-sort-desc" aria-hidden="true"></i></a>
 
 							<div class="sous-drop-rigth">
 								<a href="{{ route('commissariat', 'Chancelier') }}">Chancelier</a>
@@ -113,9 +125,9 @@
 							</div>
 
 						</div>
-								
+
 						<div class="drop-rigth">
-							<a href="#" class="">Commissariat Général Formation</a>
+							<a href="#" class="">Commissariat Général Formation <i class="fa fa-sort-desc" aria-hidden="true"></i></a>
 
 							<div class="sous-drop-rigth">
 								<a href="{{ route('commissariat','institut') }}">Institut Supérieur de Police</a>
@@ -125,7 +137,7 @@
 							</div>
 
 						</div>
-								
+
 
 
 					</div>
@@ -133,10 +145,10 @@
 
 
 				<div class="dropdown">
-					<span class="dropbtn">Publication</span>
+					<span class="dropbtn">Publication <i class="fa fa-sort-desc" aria-hidden="true"></i></span>
 					<div class="dropdown-content">
 
-					<a href="{{ route('publicite','COMMUNIQUE') }}">Communique de presse</a>
+						<a href="{{ route('publicite','COMMUNIQUE') }}">Communique de presse</a>
 						<a href="{{ route('publicite','POLICE') }}">Police Magazine</a>
 						<a href="{{ route('publicite','SPORT') }}">Sport</a>
 					</div>
@@ -145,27 +157,27 @@
 
 
 				<div class="dropdown" >
-					<span class="dropbtn" >Contacts</span>
-						<div class="dropdown-content">
-							<a href="{{ route('contact','urgence') }}">Numéro d'urgence</a>
-							<a href="{{ route('contact','inspection') }}">Inspection général</a>
-							<a href="{{ route('contact','generaux') }}">Commissariats Généraux</a>
-							<a href="{{ route('contact','provinciaux') }}">Commissariats Proveciaux</a>
-						</div>
+					<span class="dropbtn" >Contacts <i class="fa fa-sort-desc" aria-hidden="true"></i></span>
+					<div class="dropdown-content">
+						<a href="{{ route('contact','urgence') }}">Numéro d'urgence</a>
+						<a href="{{ route('contact','inspection') }}">Inspection général</a>
+						<a href="{{ route('contact','generaux') }}">Commissariats Généraux</a>
+						<a href="{{ route('contact','provinciaux') }}">Commissariats Proveciaux</a>
 					</div>
-
 				</div>
-				</div>
-			
-		</nav>
 
-		{{-- Navigation --}}
+			</div>
+		</div>
 
-		@yield('content')
+	</nav>
+
+	{{-- Navigation --}}
+
+	@yield('content')
 
 
 
-		<footer>
+	<footer>
 
 
 

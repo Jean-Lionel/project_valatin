@@ -30,16 +30,16 @@ Route::get('/apropos-client/{apropos}','ClientController@apropos')->name('apropo
 
 Route::get('/police-commissariat-client/{commissariat}','ClientController@commissariat')->name('commissariat');
 
-
-
-Route::resource('products', ProductController::class);
-Route::resource('articles', ArticleController::class);
-Route::resource('slides', SlideController::class);
-Route::resource('publicites', PubliciteController::class);
-Route::resource('publications', PublicationController::class);
-Route::resource('contacts', ContactController::class);
-Route::resource('apropos', AproposController::class);
-Route::resource('commessarias', CommecariaController::class);
+Route::middleware(['auth'])->resource('products', ProductController::class);
+Route::middleware(['auth'])->resource('articles', ArticleController::class);
+Route::middleware(['auth'])->resource('slides', SlideController::class);
+Route::middleware(['auth'])->resource('publicites', PubliciteController::class);
+Route::middleware(['auth'])->resource('publications', PublicationController::class);
+Route::middleware(['auth'])->resource('contacts', ContactController::class);
+Route::middleware(['auth'])->resource('apropos', AproposController::class);
+Route::middleware(['auth'])->resource('commessarias', CommecariaController::class);
+Route::middleware(['auth'])->resource('files', DocumentController::class);
+Route::middleware(['auth'])->resource('socialnetworks', SocialNetworkController::class);
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
